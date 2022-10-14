@@ -1,0 +1,16 @@
+ul{
+    list-style: none;
+    display: flex;
+    justify-content: space-evenly;
+    padding: 0.5rem;
+}
+
+li{
+    padding: 0.5rem;
+}
+li:hover{
+    cursor: pointer;
+    border-bottom: 2px solid gray;
+    border-right: 2px solid gray;
+    border-bottom-right-radius: 5px;
+}

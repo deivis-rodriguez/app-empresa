@@ -1,0 +1,21 @@
+p {
+    padding: 0.3rem;
+}
+
+div {
+    border: 1px solid rgb(32, 34, 95);
+    margin-bottom: 0.5rem;
+}
+
+.contenedor {
+    display: flex;
+    justify-content: space-evenly;
+}
+
+app-listar-empleados {
+    width: 29%;
+}
+
+app-mas-info {
+    width: 69%;
+}

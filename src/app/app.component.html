@@ -1,6 +1,19 @@
 <app-header></app-header>
+<app-nav-bar></app-nav-bar>
+<button (click)="mostrar = (mostrar) ? false: true">Listar Empleados</button>
+<div class="contenedor">
+  <app-listar-empleados *ngIf="!mostrar" (notificar)="empleado = $event"></app-listar-empleados>
+  <app-mas-info [empleado]="empleado"></app-mas-info>
+</div>
 
-<h1>{{title | number}}</h1>
+<!--<h1>{{title}}</h1>
 <button [disabled]="puedeCliquear" (click)="saludar()">
   Enviar
 </button>
+
+<div *ngFor="let estudiante of lista">
+  <p>Nombre: {{estudiante.nombre}}</p>
+  <p>Edad: {{estudiante.edad}}</p>
+  <p>Curso: {{estudiante.curso}}</p>
+</div>
+-->
