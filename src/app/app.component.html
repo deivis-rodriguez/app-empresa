@@ -1,10 +1,12 @@
 <app-header></app-header>
 <app-nav-bar></app-nav-bar>
-<button (click)="mostrar = (mostrar) ? false: true">Listar Empleados</button>
-<div class="contenedor">
-  <app-listar-empleados *ngIf="!mostrar" (notificar)="empleado = $event"></app-listar-empleados>
-  <app-mas-info [empleado]="empleado"></app-mas-info>
+<div class="cont_link">
+  <a routerLink="listar-empleados">Listar Empleados</a>
+  <a routerLink="crear-empleado">Agregar Empleado</a>
 </div>
+
+
+<router-outlet></router-outlet>
 
 <!--<h1>{{title}}</h1>
 <button [disabled]="puedeCliquear" (click)="saludar()">

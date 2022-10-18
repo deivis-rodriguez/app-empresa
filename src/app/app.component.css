@@ -1,21 +1,24 @@
 p {
     padding: 0.3rem;
 }
-
-div {
-    border: 1px solid rgb(32, 34, 95);
-    margin-bottom: 0.5rem;
+div.cont_link{
+    display: inline-flex;
 }
 
-.contenedor {
-    display: flex;
-    justify-content: space-evenly;
+a {
+    padding: 0.3rem 0.5rem;
+    background-color: rgb(217, 181, 120);
+    text-decoration: none;
+    color: rgb(20, 20, 20);
+    font-weight: bold;
+    margin-right: 0.4rem;
+    display: block;
 }
 
-app-listar-empleados {
-    width: 29%;
+a:hover{
+    background-color: rgb(196, 163, 105);
 }
 
-app-mas-info {
-    width: 69%;
+a:hover + .opciones{
+    border-top: 1px solid black;
 }

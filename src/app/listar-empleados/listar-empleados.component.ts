@@ -1,19 +1,22 @@
-import { Component, Output, EventEmitter } from '@angular/core';
-import { Empleado, empleados } from '../empleado';
+import { Component, OnInit, Output, EventEmitter } from '@angular/core';
+import { Empleado } from '../empleado';
+import { EmpleadoService } from '../empleado.service';
 
 @Component({
   selector: 'app-listar-empleados',
   templateUrl: './listar-empleados.component.html',
   styleUrls: ['./listar-empleados.component.css']
 })
-export class ListarEmpleadosComponent {
+export class ListarEmpleadosComponent implements OnInit {
   visible = 'none';
   signo = '+';
   listaEmpleados: Empleado[];
-  @Output() notificar = new EventEmitter<Empleado>();
+  mEmpleado!: Empleado;
+  servicio: EmpleadoService;
 
-  constructor() {
-    this.listaEmpleados = empleados;
+  constructor(sevicio: EmpleadoService) {
+    this.servicio = sevicio;
+    this.listaEmpleados = [];
   }
 
   mostrarDetalle() {
@@ -25,5 +28,11 @@ export class ListarEmpleadosComponent {
       this.visible = 'none';
       this.signo = '+';
     }
+  }
+
+  ngOnInit(): void {
+    this.servicio.listarEmpleados().subscribe((empleados) => {
+      this.listaEmpleados = empleados;
+    });
   }
 }

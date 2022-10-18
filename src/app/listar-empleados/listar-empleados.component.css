@@ -1,3 +1,22 @@
 button{
     cursor: pointer;
 }
+
+.contenedor {
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.contenedor > div > div{
+    border: 1px solid rgb(32, 34, 95);
+    margin-bottom: 0.5rem;
+}
+
+app-listar-empleados {
+    width: 29%;
+}
+
+app-mas-info {
+    width: 69%;
+}
+

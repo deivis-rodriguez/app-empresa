@@ -8,7 +8,6 @@ import { Empleado } from './empleado';
 })
 export class AppComponent {
 
-  empleado !: Empleado;
   mostrar = true;
   title = 1984;
   puedeCliquear = false;
@@ -24,9 +23,5 @@ export class AppComponent {
     alert('hola extraño')
   }
 
-  setEmplado(empleado: Empleado) {
-    this.empleado = empleado;
-
-    console.log(this.empleado)
-  }
+  
 }

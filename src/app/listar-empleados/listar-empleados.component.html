@@ -1,14 +1,10 @@
 <h3>Lista de empleados de la empresa</h3>
-<div *ngFor="let empleado of listaEmpleados" (click)="notificar.emit(empleado)">
-    <h4> {{empleado.nombre}}</h4>
-    <p>Cargo: {{empleado.cargo}}</p>
-    <p>Salario: {{empleado.salario | currency: 'USD'}}</p>
-    <p *ngIf="(empleado.estado.activo)">Estado: activo</p>
-    <p *ngIf="(!empleado.estado.activo)">Estado: inactivo
-        <button (click)="mostrarDetalle()">{{signo}}</button>
-    </p>
-    <p [ngStyle]="{'display': visible}" *ngIf="(empleado.estado.detalles)">
-        {{empleado.estado.detalles}}
-    </p>
-
+<div class="contenedor">
+    <div>
+        <div *ngFor="let empleado of listaEmpleados" (click)="mEmpleado = empleado">
+            <h4> {{empleado.nombre}}</h4>
+            <p>Cargo: {{empleado.cargo}}</p>    
+        </div>
+    </div>
+    <app-mas-info [empleado]="mEmpleado"></app-mas-info>
 </div>
