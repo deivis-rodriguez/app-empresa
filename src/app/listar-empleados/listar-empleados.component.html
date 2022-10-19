@@ -1,10 +1,11 @@
 <h3>Lista de empleados de la empresa</h3>
 <div class="contenedor">
     <div>
-        <div *ngFor="let empleado of listaEmpleados" (click)="mEmpleado = empleado">
+        <div *ngFor="let empleado of listaEmpleados" routerLink="datalles-empleado/{{empleado.idEmpleado}}" > <!--(click)="mEmpleado = empleado"-->
             <h4> {{empleado.nombre}}</h4>
             <p>Cargo: {{empleado.cargo}}</p>    
         </div>
     </div>
-    <app-mas-info [empleado]="mEmpleado"></app-mas-info>
+
+    <!--<app-mas-info [empleado]="mEmpleado"></app-mas-info>-->
 </div>

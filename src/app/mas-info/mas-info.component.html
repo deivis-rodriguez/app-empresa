@@ -1,7 +1,16 @@
-<p *ngIf="empleado !== undefined">
-    {{empleado.nombre}}<br>
-</p>
-<p *ngIf="empleado !== undefined">
-    Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorem dolor rerum provident nobis obcaecati, minima
-    eligendi aliquam enim numquam rem reprehenderit dolores, autem repellat! Asperiores modi vel odio veniam numquam?
-</p>
+<button (click)="volver()">
+    < </button>
+    <h3 *ngIf="empleado !== undefined">
+        {{empleado.nombre}}
+    </h3>
+    <p *ngIf="empleado !== undefined">
+        cargo: {{empleado.cargo}}
+    </p>
+    <p *ngIf="empleado !== undefined">
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorem dolor rerum provident nobis obcaecati,
+        minima
+        eligendi aliquam enim numquam rem reprehenderit dolores, autem repellat! Asperiores modi vel odio veniam
+        numquam?
+    </p>
+    <button routerLink="editar-empleado"> Editar </button>
+    <button (click)="eliminar()"> Eliminar </button>

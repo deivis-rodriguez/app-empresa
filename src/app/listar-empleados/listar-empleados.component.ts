@@ -12,7 +12,7 @@ export class ListarEmpleadosComponent implements OnInit {
   signo = '+';
   listaEmpleados: Empleado[];
   mEmpleado!: Empleado;
-  servicio: EmpleadoService;
+  private servicio: EmpleadoService;
 
   constructor(sevicio: EmpleadoService) {
     this.servicio = sevicio;

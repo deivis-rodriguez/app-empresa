@@ -1,1 +1,11 @@
-<p>crear-empleado works!</p>
+<form (submit)="guardar()" #empleadoForm="ngForm">
+    <div>
+        <label for="nombre">Nombre: </label>
+        <input [(ngModel)]="empleado.nombre" name="nombre" id="nombre" type="text" required>
+    </div>
+    <div>
+        <label for="cargo">Cargo: </label>
+        <input [(ngModel)]="empleado.cargo" name="cargo" id="cargo" type="text">
+    </div>
+    <button [disabled]="!empleadoForm.form.valid" >Guardar</button>
+</form>

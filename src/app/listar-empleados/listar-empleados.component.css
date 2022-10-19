@@ -4,7 +4,7 @@ button{
 
 .contenedor {
     display: flex;
-    justify-content: space-evenly;
+    justify-content: left;
 }
 
 .contenedor > div > div{

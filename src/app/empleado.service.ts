@@ -19,4 +19,24 @@ export class EmpleadoService {
   public listarEmpleados(): Observable<Empleado[]> {
     return this.httpCliente.get<Empleado[]>(this.url);
   }
+
+  public getEmpleado(idEmpleado: string): Observable<Empleado> {
+    let ruta = `${this.url}/${idEmpleado}`;
+    return this.httpCliente.get<Empleado>(ruta);
+  }
+
+  public guardarEmpleado(empleado: Empleado): Observable<Empleado> {
+    return this.httpCliente.post<Empleado>(this.url, empleado);
+  }
+
+
+  public actualizarEmpleado(empleado: Empleado): Observable<void> {
+    let ruta = `${this.url}/${empleado.idEmpleado}`;
+    return this.httpCliente.put<void>(ruta, empleado)
+  }
+
+  public eliminarEmpleado(idEmpleado: number): Observable<Empleado> {
+    let ruta = `${this.url}/${idEmpleado}`;
+    return this.httpCliente.delete<Empleado>(ruta)
+  }
 }

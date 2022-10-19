@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { Empleado } from '../empleado';
+import { EmpleadoService } from '../empleado.service';
+import { Location } from '@angular/common';
 
 @Component({
   selector: 'app-crear-empleado',
@@ -7,9 +10,20 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CrearEmpleadoComponent implements OnInit {
 
-  constructor() { }
+  public empleado: Empleado = new Empleado();
+
+  constructor(private servicio: EmpleadoService, private ubicacion: Location) {
+  }
 
   ngOnInit(): void {
+  }
+
+  guardar() {
+    console.log(this.empleado)
+    this.servicio.guardarEmpleado(this.empleado).subscribe((empleado) => {
+      alert('empleado guardado\n' + empleado);
+      this.ubicacion.back();
+    })
   }
 
 }
