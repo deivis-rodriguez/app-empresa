@@ -12,7 +12,7 @@ export class EmpleadoService {
   private httpCliente: HttpClient;
 
   constructor(httpCliente: HttpClient) {
-    this.url = 'http://localhost:8080/empleados';
+    this.url = 'http://129.213.129.206:8080/empresa/empleados';
     this.httpCliente = httpCliente;
   }
 
